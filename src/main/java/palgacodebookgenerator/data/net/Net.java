@@ -38,8 +38,8 @@ import java.util.Map;
  */
 public class Net {
     private static final Logger logger = LogManager.getLogger(Net.class.getName());
-    private Map<String, Node> nodeMap = new HashMap<>();
-    private List<CodebookNode> codebookNodes = new ArrayList<>();
+    private final Map<String, Node> nodeMap = new HashMap<>();
+    private final List<CodebookNode> codebookNodes = new ArrayList<>();
     private Node startNode;
 
     private NetInformation netInformation;

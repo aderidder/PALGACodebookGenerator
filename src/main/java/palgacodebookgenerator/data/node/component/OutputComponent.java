@@ -37,7 +37,7 @@ public class OutputComponent implements Component{
     private static final Pattern targetPattern = ParseUtils.getIntPattern("target");
     private static final Pattern can_stopPattern = ParseUtils.getIntPattern("can_stop");
 
-    private List<OutputValues> outputValues = new ArrayList<>();
+    private final List<OutputValues> outputValues = new ArrayList<>();
 
     /**
      * constructor
@@ -108,7 +108,7 @@ public class OutputComponent implements Component{
     /**
      * class for output values
      */
-    private class OutputValues {
+    private static class OutputValues {
         private String id="";
         private String target="";
         private String can_stop="";

@@ -28,21 +28,22 @@ import javafx.stage.Stage;
 /**
  * main for protocol parser
  */
-public class PALGACodebookGenerator extends Application {
-    public static void main(String ... args) {
-        launch(args);
+public class PALGACodebookGenerator {
+    public static void main(String [] args) {
+        Application.launch(StartApplication.class, args);
     }
 
     /**
      * Create the main GUI window
-     *
-     * @param primaryStage the primary stage
      */
-    @Override
-    public void start(Stage primaryStage) {
-        MainWindow mainWindow = new MainWindow();
-        mainWindow.createMainWindow(primaryStage);
+    public static class StartApplication extends Application {
+        @Override
+        public void start(Stage stage) {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.createMainWindow(stage);
+        }
     }
+
 
 }
 

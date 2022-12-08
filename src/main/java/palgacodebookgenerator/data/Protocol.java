@@ -160,7 +160,7 @@ public class Protocol {
     /**
      * additional protocol info
      */
-    class ProtocolInfo {
+    static class ProtocolInfo {
         private final Pattern versionPattern = ParseUtils.getStringPattern("version");
         private String version;
         private String smallVersion;

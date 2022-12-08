@@ -37,7 +37,7 @@ class RunParameters {
 
     private boolean storeOptionsInSeparateSheets = false;
 
-    private Protocol protocol = new Protocol();
+    private final Protocol protocol = new Protocol();
 
     RunParameters() {
 

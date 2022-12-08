@@ -38,8 +38,8 @@ abstract class DefaultCodebook implements Codebook{
     Map<String, List<CodebookItem>> codebookItemMap;
     Protocol protocol;
     private int maxPartialRulesLength=0;
-    private boolean writeInSeparateSheets;
-    private String codebookType;
+    private final boolean writeInSeparateSheets;
+    private final String codebookType;
 
     DefaultCodebook(Protocol protocol, CaptionOverwriter captionOverwriter, String codebookType, boolean writeInSeparateSheets){
         this.writeInSeparateSheets = writeInSeparateSheets;

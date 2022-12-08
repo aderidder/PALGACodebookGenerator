@@ -59,7 +59,7 @@ class ProtocolWizard {
 
     private static final int wizardWidth = 600;
     private static final int wizardHeight = 300;
-    private RunParameters runParameters = new RunParameters();
+    private final RunParameters runParameters = new RunParameters();
     private boolean canRun = false;
 
     /**
@@ -300,11 +300,11 @@ class ProtocolWizard {
      */
     private WizardPane createProtocolPage(){
         return new WizardPane(){
-            private ComboBox<String> codebookTypeComboBox = createComboBox("codebookType");
-            private CheckBox optionsInSheetsCheckBox = new CheckBox();
-            private Label optionsInSheetsLabel = new Label("Create separate sheets for Options found in protocol: ");
+            private final ComboBox<String> codebookTypeComboBox = createComboBox("codebookType");
+            private final CheckBox optionsInSheetsCheckBox = new CheckBox();
+            private final Label optionsInSheetsLabel = new Label("Create separate sheets for Options found in protocol: ");
 
-            ValidationSupport validationSupport = new ValidationSupport();
+            final ValidationSupport validationSupport = new ValidationSupport();
 
             {
                 this.getStylesheets().clear();
@@ -412,8 +412,8 @@ class ProtocolWizard {
     private WizardPane createNetListPage(){
         return new WizardPane(){
             private String curWorkspace="-1";
-            private ListSelectionView<String> listSelectionView = new ListSelectionView<>();
-            ValidationSupport validationSupport = new ValidationSupport();
+            private final ListSelectionView<String> listSelectionView = new ListSelectionView<>();
+            final ValidationSupport validationSupport = new ValidationSupport();
 
             private TextField textField;
 

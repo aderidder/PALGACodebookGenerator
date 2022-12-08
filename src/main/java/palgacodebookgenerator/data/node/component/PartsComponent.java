@@ -49,15 +49,15 @@ class PartsComponent implements Component{
     private static final Pattern messagePattern = ParseUtils.getStringPattern("message");
     private static final Pattern typePattern = ParseUtils.getStringPattern("type");
 
-    private List<String> optionValues = new ArrayList<>();
+    private final List<String> optionValues = new ArrayList<>();
 
     // rule parts decide which node which Node one can travel to
     // e.g. if (value == 3)==true --> goto node x, otherwise goto node y
-    private List<RuleParts> rulePartsValues = new ArrayList<>();
+    private final List<RuleParts> rulePartsValues = new ArrayList<>();
 
     // validation rules decide e.g. whether the field is mandatory, or whether a value
     // should be between 0 and 10
-    private List<ValidationRules> validationRulesValues = new ArrayList<>();
+    private final List<ValidationRules> validationRulesValues = new ArrayList<>();
 
     private String caption="";
     private String path="";
@@ -259,7 +259,7 @@ class PartsComponent implements Component{
     }
 
 
-    private class RuleParts{
+    private static class RuleParts{
         private String elementOperator="";
         private String operator="";
         private String test="";
@@ -281,7 +281,7 @@ class PartsComponent implements Component{
         }
     }
 
-    private class ValidationRules{
+    private static class ValidationRules{
         private String type="";
         private String message="";
 

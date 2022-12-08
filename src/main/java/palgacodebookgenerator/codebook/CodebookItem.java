@@ -35,12 +35,12 @@ import java.util.stream.Collectors;
  * the codebooks
  */
 public class CodebookItem {
-    private String path;
+    private final String path;
+    private final List<String> validationRules;
     private String caption;
     private String _name;
     private String data_type;
     private List<String> options;
-    private List<String> validationRules;
     private List<String> partialRules;
 
     private String log;

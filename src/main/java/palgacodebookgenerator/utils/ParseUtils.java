@@ -102,7 +102,7 @@ public class ParseUtils {
         // keeps track of the level and decides whether we may add the line or whether
         // the line is a new element
         class LevelSplit{
-            private int level;
+            private final int level;
             private int curLevel=0;
 
             private LevelSplit(int level){

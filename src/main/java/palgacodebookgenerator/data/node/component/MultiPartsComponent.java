@@ -31,7 +31,7 @@ import java.util.List;
  * The parts entry in a Node sometimes contains multiple entries, hence we need a MultiPartsComponent
  */
 public class MultiPartsComponent implements Component {
-    private List<PartsComponent> partsComponentList = new ArrayList<>();
+    private final List<PartsComponent> partsComponentList = new ArrayList<>();
 
     /**
      * add data to this component

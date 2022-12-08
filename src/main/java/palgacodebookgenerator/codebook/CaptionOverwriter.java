@@ -25,6 +25,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,9 +37,9 @@ import java.util.stream.Collectors;
  */
 public class CaptionOverwriter {
     private static final Logger logger = LogManager.getLogger(CaptionOverwriter.class.getName());
-    private String protocolName;
-    private Map<String, String> overwriteMap = new HashMap<>();
-    private Map<String, List<String>> missingOverwritesMap = new HashMap<>();
+    private final String protocolName;
+    private final Map<String, String> overwriteMap = new HashMap<>();
+    private final Map<String, List<String>> missingOverwritesMap = new HashMap<>();
     private boolean validOverwriteFileProvided = false;
 
     /**
@@ -77,7 +78,7 @@ public class CaptionOverwriter {
             String line;
 
             try (BufferedReader br = new BufferedReader(
-                    new InputStreamReader(new FileInputStream(new File(fileName)), "ISO-8859-1"))) {
+                    new InputStreamReader(new FileInputStream(fileName), StandardCharsets.ISO_8859_1))) {
                 // read the first line of the data, which contains the header, and add it to our input data
                 line = br.readLine();
                 if (!correctProtocolFile(line)) {
